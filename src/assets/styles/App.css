@@ -1,0 +1,68 @@
+* {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  text-decoration: none;
+  color: black;
+}
+button,
+a {
+  cursor: pointer;
+}
+
+.cardsMovie {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+.cardMovie {
+  width: 150px;
+  margin: 18px;
+}
+
+.cardMovie .spn-btn {
+  display: flex;
+  max-width: 100%;
+  flex-wrap: wrap;
+}
+
+.cardMovie button {
+  background: none;
+  border: none;
+  padding: 8px 15px;
+  color: white;
+}
+.cardMovie button:hover {
+  background: none;
+  border: none;
+  color: black;
+}
+.cardMovie a {
+  margin-right: 10px;
+  margin-left: auto;
+  margin-top: -15px;
+  padding: 0;
+  border: none;
+  background-color: black;
+  color: white;
+  border-radius: 5px;
+  transition: 150ms ease-in;
+}
+.cardMovie a:hover {
+  background-color: #ccc;
+  color: black;
+}
+.cardMovie img {
+  max-width: 100%;
+}
+
+.genreList {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+}
+.genreList .list {
+  padding: 5px;
+  cursor: pointer;
+}
