@@ -1,15 +1,10 @@
-import React, { useEffect } from "react";
-import { Link } from "react-router-dom";
+import React from "react";
 
 function MovieList(props) {
-  let page = [];
-  // console.log(props.page);
-
   return (
     <div className="MovieLists">
       <div className="cardsMovie">
-        {/* {array.forEach((element) => {})} */}
-        {props.movies.map((movie, index) => (
+        {props.movies.map((movie) => (
           <article className="cardMovie" key={movie.id}>
             <img
               src={

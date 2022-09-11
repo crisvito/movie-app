@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { useEffect } from "react";
+import { Link } from "react-router-dom";
 
 function MovieGenreList(props) {
   const [MovieGenreL, setMovieGenreL] = useState([]);
@@ -19,17 +20,18 @@ function MovieGenreList(props) {
       <ul className="genreList">
         {MovieGenreL.map((genre) => {
           return (
-            <li
-              value={genre.id}
-              onClick={(e) => {
-                props.setMovieGenreVal(e.target.value);
-                props.setHome(false);
-              }}
-              className="list"
-              key={genre.id}
-            >
-              {genre.name}
-            </li>
+            <Link key={genre.id} to={`/${genre.name}`}>
+              <li
+                value={genre.id}
+                onClick={(e) => {
+                  props.setMovieGenreVal(e.target.value);
+                  props.setHome(false);
+                }}
+                className="list"
+              >
+                {genre.name}
+              </li>
+            </Link>
           );
         })}
       </ul>

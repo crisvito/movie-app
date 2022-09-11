@@ -1,4 +1,5 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
+import { Link } from "react-router-dom";
 import MovieListHeading from "./Header/MovieListHeading";
 import SearchBox from "./SearchBox/SearchBox";
 import SearchResults from "./SearchBox/SearchResult";
@@ -9,8 +10,6 @@ const Movie = () => {
   const [keyword, setKeyword] = useState("");
   const [MovieGenreVal, setMovieGenreVal] = useState(" ");
   const [home, setHome] = useState(false);
-  const [page, setPage] = useState([]);
-  const [results, setResults] = useState([]);
 
   function handleHome() {
     if (!home) setHome(true);
@@ -20,14 +19,16 @@ const Movie = () => {
     <div>
       <div>
         <MovieListHeading heading="Movies" />
+      </div>
+      <div>
         <MovieGenreList setHome={setHome} setMovieGenreVal={setMovieGenreVal} />
-        <a onClick={handleHome}>Home</a>
+        <Link to={"/"} onClick={handleHome}>
+          Home
+        </Link>
         <SearchBox setHome={setHome} value={keyword} setKeyword={setKeyword} />
       </div>
       <div>
-        {home === true && (
-          <MovieGenreResults setPage={setPage} MovieGenreVal="action" />
-        )}
+        {home === true && <MovieGenreResults MovieGenreVal="action" />}
         {keyword ? (
           <SearchResults keyword={keyword} />
         ) : (
